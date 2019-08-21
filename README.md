@@ -1,5 +1,5 @@
 # LUAD.subtypes
-This R package contains the data and analysis scripts to reproduce all results and figures, accompanying Daemen et al, Transcriptional subtyping resolves tumor heterogeneity and identifies therapeutic vulnerabilities in lung cancer.
+This R package contains the data and analysis scripts to reproduce all results and figures, accompanying Daemen et al, Transcriptional subtypes resolve tumor heterogeneity and identify therapeutic vulnerabilities in lung cancer.
 
 ## Directory structure
 
