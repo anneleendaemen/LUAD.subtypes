@@ -1,0 +1,38 @@
+data <- read.table("../data/CellLineDrugResponse_SubtypeAssociation.tsv", sep="\t", header=TRUE, check.names=FALSE)
+
+pdf("../figures/Fig5_CellLines_Waterfallplot_MEKERK_Subtype1.pdf", width=4.5, height=6.5)
+ord <- order(data$MUC.corrSpearman)
+counts <- data[ord, "MUC.corrSpearman"]
+par(mar=c(5,3,1,1), xpd=TRUE)
+bp <- barplot(counts, horiz=TRUE, col="gray45", border=FALSE, main="", xlab="", cex.lab=1.4, cex.axis=1.25)
+indices.1 <- which(data[ord,"TARGET_NAME"] %in% "MEK2, MEK1")
+indices.2 <- which(data[ord,"TARGET_NAME"] %in% "ERK")
+for (i in indices.1) lines(x=c(counts[i], 0), y=c(bp[i, 1], bp[i, 1]), col="darkslategray2", lwd=3)
+for (i in indices.2) lines(x=c(counts[i], 0), y=c(bp[i, 1], bp[i, 1]), col="darkorange2", lwd=3)
+legend("topleft", legend=c("526 compounds", "MEK1/2", "ERK"), fill=c("gray45", "darkslategray2", "darkorange2"), border=NA, bty="n", cex=1)
+text(x=0.1, y=-115, labels="Correlation\n(MUC, mean viability)", cex=1.4)
+dev.off()
+
+pdf("../figures/Fig5_CellLines_Waterfallplot_MEKERK_Subtype2.pdf", width=4.5, height=6.5)
+ord <- order(data$PRO.corrSpearman)
+counts <- data[ord, "PRO.corrSpearman"]
+par(mar=c(5,3,1,1), xpd=TRUE)
+bp <- barplot(counts, horiz=TRUE, col="gray45", border=FALSE, main="", xlab="", cex.lab=1.4, cex.axis=1.25)
+indices.1 <- which(data[ord,"TARGET_NAME"] %in% "MEK2, MEK1")
+indices.2 <- which(data[ord,"TARGET_NAME"] %in% "ERK")
+for (i in indices.1) lines(x=c(counts[i], 0), y=c(bp[i, 1], bp[i, 1]), col="darkslategray2", lwd=3)
+for (i in indices.2) lines(x=c(counts[i], 0), y=c(bp[i, 1], bp[i, 1]), col="darkorange2", lwd=3)
+text(x=0.1, y=-115, labels="Correlation\n(PRO, mean viability)", cex=1.4)
+dev.off()
+
+pdf("../figures/Fig5_CellLines_Waterfallplot_MEKERK_Subtype3.pdf", width=4.5, height=6.5)
+ord <- order(data$MES.corrSpearman)
+counts <- data[ord, "MES.corrSpearman"]
+par(mar=c(5,3,1,1), xpd=TRUE)
+bp <- barplot(counts, horiz=TRUE, col="gray45", border=FALSE, main="", xlab="", cex.lab=1.4, cex.axis=1.25)
+indices.1 <- which(data[ord,"TARGET_NAME"] %in% "MEK2, MEK1")
+indices.2 <- which(data[ord,"TARGET_NAME"] %in% "ERK")
+for (i in indices.1) lines(x=c(counts[i], 0), y=c(bp[i, 1], bp[i, 1]), col="darkslategray2", lwd=3)
+for (i in indices.2) lines(x=c(counts[i], 0), y=c(bp[i, 1], bp[i, 1]), col="darkorange2", lwd=3)
+text(x=0.1, y=-115, labels="Correlation\n(MES, mean viability)", cex=1.4)
+dev.off()
