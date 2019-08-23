@@ -7,4 +7,5 @@ This R package contains the data and analysis scripts to reproduce all results a
 analysis/   → scripts for each main and supplemental figure panel in the paper
 data/       → accompanying data
 figures/    → results and figures
+inst/       → license
 ```
